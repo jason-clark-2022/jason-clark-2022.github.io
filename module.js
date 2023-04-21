@@ -1,7 +1,7 @@
 const body = document.body;
-const header = document.querySelector("navbar");
-const main = document.querySelector("main");
-const headerHeight = document.querySelector("navbar").offsetHeight;
+const header = document.querySelector(".navbar");
+const main = document.querySelector(".main");
+const headerHeight = document.querySelector(".navbar").offsetHeight;
 main.style.top = headerHeight + "px";
 let lastScroll = 0;
 window.addEventListener("scroll", () => {
