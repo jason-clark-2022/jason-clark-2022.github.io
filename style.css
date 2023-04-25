@@ -8,6 +8,37 @@
     font-family: 'Fira Code', sans-serif;
     box-sizing: border-box;
 }
+*::-webkit-scrollbar {
+  width: 12px;
+  background-color: #121212;
+}
+
+*::-webkit-scrollbar-track {
+  background: #0c0d0d00;
+  border: 4.5px solid transparent;
+  border-radius: 20px;
+  background-clip: content-box;
+}
+*::-webkit-scrollbar-track:hover {
+  background: #ffff0000;
+  background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb {
+  border: 4.5px solid transparent;
+  border-radius: 20px;
+  background-clip: content-box;
+  background-color: #ffffff;
+  border-radius: 10px;
+  
+}
+/* *::-webkit-scrollbar-thumb:hover {
+  border: transparent;
+  border-radius: 15px;
+  background-clip: initial;
+  background-color: #e066ff;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+} */
 
 
 
@@ -79,7 +110,7 @@ p {
   height:30vh;
   width:100%;
   margin: 0;
-  padding: 0;
+  padding-top: 60px;
 }
 
 .flex { /*Flexbox for containers*/
@@ -87,6 +118,7 @@ p {
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex-direction: column;
 }
 
 .waves {
@@ -175,7 +207,7 @@ p {
 #menuToggle a:hover
 {
   
-  color: tomato;
+  color: rgb(0, 255, 102);
 }
 #menuToggle input
 {
@@ -183,7 +215,8 @@ p {
   width: 40px;
   height: 32px;
   position: fixed;
-  top: 1px;
+  top: 10px;
+  left: 10px;
   
   
   cursor: pointer;
@@ -197,9 +230,9 @@ p {
 #menuToggle span
 {
   top: -30px;
-  right: 10%;
+  left: 15px;
   display: block;
-  width: 32px;
+  width: 33px;
   height: 4px;
   margin-bottom: 5px;
   position:relative;
@@ -246,13 +279,13 @@ p {
   position: fixed;
   width: 100%;
   top: 0;
-  padding-top: 1%;
-  padding-bottom: 1%;
+  padding-top: 15px;
+  padding-bottom: 15px;
   /* padding-top: 30px; */
   padding-right: 3%;
   text-align: right;
   
-  background: #ededed32;
+  background: #ededed14;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
