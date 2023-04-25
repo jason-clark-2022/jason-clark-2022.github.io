@@ -1,18 +1,25 @@
-const body = document.body;
-const header = document.querySelector(".navbar");
-const main = document.querySelector(".main");
-const headerHeight = document.querySelector(".navbar").offsetHeight;
-main.style.top = headerHeight + "px";
+
+const checkbox = document.getElementById("menuToggle").getElementsByTagName("input")[0];
+
+
+// main.style.top = headerHeight + "px";
+
 let lastScroll = 0;
 window.addEventListener("scroll", () => {
   let currentScroll = window.pageYOffset;
   if (currentScroll - lastScroll > 0) {
-    header.classList.add("scroll-down");
-    header.classList.remove("scroll-up");
+  
+    checkbox.checked=false;
+    header.classList.add("hidden-nav");
+    header.classList.remove("visible-nav");
+    
   } else {
     // scrolled up -- header show
-    header.classList.add("scroll-up");
-    header.classList.remove("scroll-down");
+    // header.style.top="-50px";
+    checkbox.checked=true;
+    header.classList.add("visible-nav");
+    header.classList.remove("hidden-nav");
   }
   lastScroll = currentScroll;
 })
+
