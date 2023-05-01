@@ -365,6 +365,8 @@ p {
   overflow: hidden; /* Hide any overflow from the wrapper element */
 }
 .bio-background {
+  display: flex;
+  justify-content: center;
   text-align: center;
   background: rgb(0, 0, 0);
   position: absolute;
@@ -443,7 +445,7 @@ h2 {
 
 
 .resume{
-  width: 90%;
+  width: 85%;
   /* width: 950px; */
   margin: 0 auto;
   color: white;
@@ -451,7 +453,9 @@ h2 {
 }
 
 .resume hr {
+  display: flex;
   border: 1px solid white;
+
 }
 
 .resume .full-qual {
@@ -498,7 +502,7 @@ h2 {
 
 .resume #job-siue{
   z-index: 1;
-  left: 22%;
+  left: 23%;
   border-left: 360px solid transparent;
   border-right: 360px solid transparent;
   border-bottom: 0px solid var(--lightgreen);
@@ -511,8 +515,8 @@ h2 {
 }
 
 .resume #job-usb {
-  z-index: 6;
-  left: 47%;
+  z-index: 7;
+  left: 48%;
   border-left: 30px solid transparent;
   border-right: 30px solid transparent;
   border-bottom: 0px solid var(--lightgray);
@@ -527,11 +531,12 @@ h2 {
 
 .resume #job-bing-shop {
   z-index: 6;
-  left: 32%;
+  left: 33%;
   opacity: .5;
   border-left: 200px solid transparent;
   border-right: 200px solid transparent;
-  border-bottom: 0px solid var(--gray);
+  border-bottom: 0px solid var(--lightgreen);
+  /* border-bottom: 0px solid rgb(67, 255, 74); */
   transition: border-bottom 1.5s;
 }
 
@@ -547,7 +552,7 @@ h2 {
 
 .resume #job-bing-field {
   z-index: 4;
-  left: 8%;
+  left: 9%;
   border-left: 310px solid transparent;
   border-right: 310px solid transparent;
   opacity: .5;
@@ -563,7 +568,7 @@ h2 {
 
 .resume #job-olivers {
     z-index: 6;
-    left: 82%;
+    left: 80%;
     /* left: 300px; */
     border-left: 75px solid transparent;
     border-right: 75px solid transparent;
@@ -589,6 +594,8 @@ h2 {
   }
   
   .resume .years .middot {
+    display: flex;
+    justify-content: space-between;
     margin: 0 auto;
     font-size: 58px;
     color: var(--gray);
@@ -597,16 +604,21 @@ h2 {
   }
   
   .resume .years .year-list {
+    
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
     margin-top: -18px;
   }
   
   .resume .years * {
+    display: inline;
     list-style-position: outside;
     padding: 0;
-    display: inline;
   }
   
   .resume .years span {
+
     display: inline-block;
     position: relative;
     

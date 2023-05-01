@@ -55,11 +55,16 @@ window.addEventListener('scroll', function() {
 
 
 
-window.addEventListener('resize', setTimelineSizes);
+window.addEventListener('resize', setTimelineWidths);
 
 
 window.onload = function() {
-  setTimelineSizes();
+  setTimelineWidths();
+  setTimelineHeights();
+}
+
+
+function setTimelineHeights(){
   document.getElementById('job-siue').style.borderBottomWidth = (siueSpan/2) + "px";
   document.getElementById('job-usb').style.borderBottomWidth = (usbSpan/2) + "px";
   document.getElementById('job-bing-shop').style.borderBottomWidth = (bingShopSpan/2) + "px";
@@ -68,42 +73,35 @@ window.onload = function() {
 }
 
 
+function setTimelineWidths(){
+  var wrapperSize = document.getElementsByClassName('resume')[0].offsetHeight;
+  var timelineWidth = document.getElementById('resume-timeline').offsetWidth;
 
-function setTimelineSizes(){
-  // var wrapperSize = document.getElementsByClassName('resume')[0].offsetWidth;
-  var timelineSize = document.getElementById('resume-timeline').offsetWidth;
-
-  // console.log("wrapperSize: "+ wrapperSize);
-  // console.log(tls);
-
-  // var timelineSize = wrapperSize * .9;
   
-  siueSpan = timelineSize / 2.4;
+  siueSpan = timelineWidth / 2.7;
   siue = document.getElementById('job-siue');
   siue.style.borderLeft = siueSpan + "px solid transparent";
   siue.style.borderRight = siueSpan + "px solid transparent";
 
-  usbSpan = timelineSize / 40;
+  usbSpan = timelineWidth / 40;
   usb = document.getElementById('job-usb');
   usb.style.borderLeft = usbSpan + "px solid transparent";
   usb.style.borderRight = usbSpan + "px solid transparent";
 
-  bingShopSpan = timelineSize / 5;
+  bingShopSpan = timelineWidth / 6.3;
   bingshop = document.getElementById('job-bing-shop');
   bingshop.style.borderLeft = bingShopSpan + "px solid transparent";
   bingshop.style.borderRight = bingShopSpan + "px solid transparent";
 
-  bingFieldSpan = timelineSize / 2.92;
+  bingFieldSpan = timelineWidth / 3.6;
   bingField = document.getElementById('job-bing-field');
   bingField.style.borderLeft = bingFieldSpan + "px solid transparent";
   bingField.style.borderRight = bingFieldSpan + "px solid transparent";
 
-  oliversSpan = timelineSize / 13;
+  oliversSpan = timelineWidth / 13;
   olivers = document.getElementById('job-olivers');
   olivers.style.borderLeft = oliversSpan + "px solid transparent";
   olivers.style.borderRight = oliversSpan + "px solid transparent";
-
-
 }
 
 
