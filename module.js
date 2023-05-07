@@ -4,24 +4,24 @@ const checkbox = document.getElementById("menuToggle").getElementsByTagName("inp
 
 
 
-// let lastScroll = 0;
-// window.addEventListener("scroll", () => {
-//   let currentScroll = window.pageYOffset;
-//   if (currentScroll - lastScroll > 0) {
+let lastScroll = 0;
+window.addEventListener("scroll", () => {
+  let currentScroll = window.pageYOffset;
+  if (currentScroll - lastScroll > 0) {
   
-//     checkbox.checked=false;
-//     header.classList.add("hidden-nav");
-//     header.classList.remove("visible-nav");
+    checkbox.checked=false;
+    header.classList.add("hidden-nav");
+    header.classList.remove("visible-nav");
     
-//   } else {
-//     // scrolled up -- header show
-//     // header.style.top="-50px";
-//     checkbox.checked=true;
-//     header.classList.add("visible-nav");
-//     header.classList.remove("hidden-nav");
-//   }
-//   lastScroll = currentScroll;
-// })
+  } else {
+    // scrolled up -- header show
+    // header.style.top="-50px";
+    checkbox.checked=true;
+    header.classList.add("visible-nav");
+    header.classList.remove("hidden-nav");
+  }
+  lastScroll = currentScroll;
+})
 
 
 
@@ -57,23 +57,35 @@ window.addEventListener('scroll', function() {
 
 window.addEventListener('resize', setTimelineWidths);
 
+window.addEventListener('onload', setTimelineWidths);
+window.addEventListener('onload', setTimelineHeights);
 
 window.onload = function() {
   setTimelineWidths();
   setTimelineHeights();
 }
+window.addEventListener("scroll", function(){
+  setTimelineHeights();
+});
 
 
 function setTimelineHeights(){
-  var wrapperHeight = document.getElementsByClassName('resume')[0].offsetHeight;
-  var timelineWidth = document.getElementById('resume-timeline').offsetWidth;
-  ratio = (timelineWidth/ wrapperHeight)* 1;
+  scrollPosition=window.pageYOffset;
+  resume = document.getElementById("resume");
+  resumeTop = resume.offsetTop;
+  windowHeight = window.innerHeight;
+  if(scrollPosition >= (resumeTop-windowHeight))
+  {
+    var wrapperHeight = document.getElementsByClassName('resume')[0].offsetHeight;
+    var timelineWidth = document.getElementById('resume-timeline').offsetWidth;
+    ratio = (timelineWidth/ wrapperHeight)* 1;
 
-  document.getElementById('job-siue').style.borderBottomWidth = (siueSpan/ratio) + "px";
-  document.getElementById('job-usb').style.borderBottomWidth = (usbSpan/ratio) + "px";
-  document.getElementById('job-bing-shop').style.borderBottomWidth = (bingShopSpan/ratio) + "px";
-  document.getElementById('job-bing-field').style.borderBottomWidth = (bingFieldSpan/ratio) + "px";
-  document.getElementById('job-olivers').style.borderBottomWidth = (oliversSpan/ratio) + "px";
+    document.getElementById('job-siue').style.borderBottomWidth = (siueSpan/ratio) + "px";
+    document.getElementById('job-usb').style.borderBottomWidth = (usbSpan/ratio) + "px";
+    document.getElementById('job-bing-shop').style.borderBottomWidth = (bingShopSpan/ratio) + "px";
+    document.getElementById('job-bing-field').style.borderBottomWidth = (bingFieldSpan/ratio) + "px";
+    document.getElementById('job-olivers').style.borderBottomWidth = (oliversSpan/ratio) + "px";
+  }
 }
 
 
