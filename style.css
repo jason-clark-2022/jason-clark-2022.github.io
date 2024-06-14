@@ -42,7 +42,7 @@
 .goog-te-gadget .goog-te-combo {
   color: blue !important;
 }
-/* Trying to get rid of google translate*/
+
 
 
 .title
@@ -62,7 +62,6 @@ p {
   color:white;
   position:relative;
   background: linear-gradient(60deg, rgb(25, 25, 25) 0%, rgb(114, 114, 114) 100%);
-  
 }
 
 .inner-header {
@@ -324,7 +323,7 @@ p {
 }
 
 .bio{
-  
+
   /* backdrop-filter: blur(1px); */
   /* border: solid 6px black; */
   /* backdrop-filter: invert(80%); */
@@ -344,7 +343,7 @@ p {
   
   position: absolute;
   height: 30%;
-  width: 190%;
+  width: 210%;
   top: 30%;
   left: 0%;
   right: 10%;
@@ -654,11 +653,11 @@ footer{
 
 .references-inner-container{
   
-  /* width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-content: center;
-  justify-content: center; */
+  justify-content: center;
   
 }
 .references-content{
