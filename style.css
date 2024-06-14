@@ -26,9 +26,24 @@
     
 }
 
- *::-webkit-scrollbar {
+*::-webkit-scrollbar {
   display: none;
 }
+
+/* Trying to get rid of google translate*/
+.goog-logo-link {
+  display:none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+  color: blue !important;
+}
+/* Trying to get rid of google translate*/
+
 
 .title
 {
@@ -329,7 +344,7 @@ p {
   
   position: absolute;
   height: 30%;
-  width: 210%;
+  width: 190%;
   top: 30%;
   left: 0%;
   right: 10%;
