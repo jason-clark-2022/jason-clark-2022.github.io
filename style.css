@@ -8,12 +8,14 @@
   --dark: #121515;
   --gray: #8d8d8d;
   --lightgray: #e9e9e9;
+  --lightgreenalt: #399E3C;
   --lightgreen: #00ff22;
   --green: #2ea73e;
   --darkgreen: #23652c;
+  --mutedgreen: #436255;
+  --darkergreen: #1A2C23;
   --icongreen: #10d735;
 }
-
 
 *{
     margin: 0;
@@ -25,25 +27,6 @@
     /* border: 1px solid red; */
     
 }
-
-*::-webkit-scrollbar {
-  display: none;
-}
-
-/* Trying to get rid of google translate*/
-.goog-logo-link {
-  display:none !important;
-}
-
-.goog-te-gadget {
-  color: transparent !important;
-}
-
-.goog-te-gadget .goog-te-combo {
-  color: blue !important;
-}
-
-
 
 .title
 {
@@ -65,19 +48,16 @@ p {
 }
 
 .inner-header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
   height:30vh;
   width:100%;
   margin: 0;
   padding-top: 60px;
 }
 
-.flex { /*Flexbox for containers*/
-  display: flex;
-  /* justify-content: center; */
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-}
 
 .waves {
   position:relative;
@@ -87,8 +67,6 @@ p {
   min-height:100px;
   max-height:150px;
 }
-
-
 
 /* Animation */
 
@@ -136,7 +114,6 @@ p {
 
 
 /* navbar stuff */
-
 
 #menuToggle{
   display: block;
@@ -276,19 +253,6 @@ p {
 {
   transform: none;
 }
-.text-art{
-  position: relative;
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  bottom: 0;
-  /* user-select: none; */
-  color: white;
-  font-size: 20px;
-
-  font-family: monospace;
-}
-
 
 .content-padding {
   position:relative;
@@ -297,19 +261,69 @@ p {
   background-color: rgb(0, 0, 0);
 }
 
-.bio-wrapper{
-  position: relative;
-  height: 700px; /* Set the height of the wrapper element */
-  overflow: hidden; /* Hide any overflow from the wrapper element */
+
+
+.bio-shell{
+  display: flex;
+  justify-content: center;
 }
+
+.bio-wrapper{
+  max-width: 1800;
+  flex-grow: 1;
+  z-index: -5;
+  height: 750px; 
+  max-width: 1800px;
+  position: relative;
+}
+
+.bio-content{  
+  display: flex;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 0; 
+}
+
+.bio-flex-container{
+  color: white;
+  margin-top: 150px;
+  margin-left: 15%;
+  max-height: 100%;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bio-greeting{
+  font-size: 18px;
+  text-align: center;
+  background-color: var(--dark);
+  border-radius: 30px;
+  padding: 7% 7% 15% 7%;
+  box-shadow: 0px 0px 100px 40px  rgba(0, 0, 0, .4);
+}
+
+.bio-content h6{
+  font-size: 22px;
+}
+
+.bio-sub-greeting{
+  text-align: center;
+  background-color: var(--lightgreenalt);
+  border-radius: 15px;
+  padding: 5% 5% 10% 5%;
+  transform: translate(100px, -50px);
+
+  box-shadow: 0px 0px 100px 40px  rgba(0, 0, 0, .4);
+}
+
 .bio-background {
   display: flex;
   justify-content: center;
   text-align: right;
   background: rgb(0, 0, 0);
   position: absolute;
-  top: 10;
-  left: 0;
   height: 150%;
   width: 100%;
   z-index: -1;
@@ -317,92 +331,17 @@ p {
   transition: transform ease-out 0.3s;
   -webkit-font-smoothing: antialiased;
 }
-.bio-wrapper:hover .bio-background {
-  transform: translate3d(0, -20%, 0); /* Adjust the Y-axis value to change the parallax effect */
-  -webkit-font-smoothing: antialiased;
-}
 
-.bio{
-
-  /* backdrop-filter: blur(1px); */
-  /* border: solid 6px black; */
-  /* backdrop-filter: invert(80%); */
-  background-color: rgba(128, 128, 128, 0);
-  text-align: center;
-  justify-content: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.text-art{
+  width: 70%;
   height: 100%;
-  width: 100%;
-  transform: translate(-50%, -50%); /* Center the content using translate */
-  z-index: 0; /* Set the z-index of the content above the background */
-  
-}
-.bio-flex-container{
-  
-  position: absolute;
-  height: 30%;
-  width: 210%;
-  top: 30%;
-  left: 0%;
-  right: 10%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-}
-
-/* .bio-flex-container{
-  position: absolute;
-  height: 30%;
-  width: 80%;
-  top: 30%;
-  left: 10%;
-  right: 10%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-} */
-
-
-
-
-.bio-flex-column{
-  /* background-color: rgb(50, 69, 53); */
-  background-color: var(--dark);
-  flex-basis: 30%;
-  border-radius: 40px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  /* border: 2px white solid; */
   color: white;
-  backdrop-filter: blur(2px);
+  font-size: 20px;
+  /* font-family: monospace; */
 }
 
-.bio-flex-column h6{
-  font-size: 19px;
-}
-/* .bio-flex-column{
-  background-color: rgba(186, 186, 186, 0.301);
-  flex-basis: 30%;
-  border-radius: 10px;
-  border: 2px white solid;
-  color: white;
-  backdrop-filter: blur(2px);
-} */
 
 
-
-
-
-
-
-
-ul li {
-  padding-top: .5em;
-}
 
 
 h2 {
@@ -411,195 +350,6 @@ h2 {
   padding: .5em;
   display: inline-block;
 }
-
-
-.resume{
-  width: 85%;
-  /* width: 950px; */
-  margin: 0 auto;
-  color: white;
-  font-family: 'Fira Code', sans-serif;
-}
-
-.resume hr {
-  display: flex;
-  border: 1px solid white;
-
-}
-
-.resume .full-qual {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.resume .qual {
-  margin-bottom: 40px;
-}
-
-.resume .qual hr {
-  margin: 0 auto;
-  width: 100%;
-}
-
-.resume .data {
-  height: 250px;
-  position: relative;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.resume .data .data-item {
-  position: absolute;
-  width: 0;
-  height: 0;
-  bottom: 0;
-}
-
-.resume .data .data-item h5 {
-  position: absolute;
-  bottom: 10px;
-  white-space: nowrap;
-  border-bottom: 2px solid white;
-}
-
-.resume .data .data-item span {
-  position: absolute;
-  bottom: 13px;
-  border-left: 2px solid white;
-}
-
-
-.resume #job-siue{
-  z-index: 1;
-  left: 23%;
-  border-left: 360px solid transparent;
-  border-right: 360px solid transparent;
-  border-bottom: 0px solid var(--lightgreen);
-  opacity: 0.5;
-  transition: border-bottom 1.5s;
-}
-.resume #job-siue h5 {
-  position: absolute;
-  bottom: 33px
-}
-
-.resume #job-usb {
-  z-index: 7;
-  left: 48%;
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
-  border-bottom: 0px solid var(--lightgray);
-  transition: border-bottom 1.5s;
-}
-
-.resume #job-usb h5 {
-  position: absolute;
-  bottom: 33px;
-}
-
-
-.resume #job-bing-shop {
-  z-index: 6;
-  left: 33%;
-  opacity: .5;
-  border-left: 200px solid transparent;
-  border-right: 200px solid transparent;
-  border-bottom: 0px solid var(--lightgreen);
-  /* border-bottom: 0px solid rgb(67, 255, 74); */
-  transition: border-bottom 1.5s;
-}
-
-.resume #job-bing-shop h5 {
-  position: absolute;
-  left: -71px;
-  bottom: 63px;
-}
-
-.resume #job-bing-shop span{
-  line-height: 51px;
-}
-
-.resume #job-bing-field {
-  z-index: 4;
-  left: 9%;
-  border-left: 310px solid transparent;
-  border-right: 310px solid transparent;
-  opacity: .5;
-  border-bottom: 0px solid var(--green);
-  transition: border-bottom 1.5s;
-}
-
-.resume #job-bing-field h5 {
-  position: absolute;
-  left: -78px;
-  bottom: 33px;
-}
-
-.resume #job-olivers {
-    z-index: 6;
-    left: 80%;
-    /* left: 300px; */
-    border-left: 75px solid transparent;
-    border-right: 75px solid transparent;
-    opacity: .8;
-    border-bottom: 0px solid var(--lightgray);
-    transition: border-bottom 1.5s;
-  }
-  
-  .resume #job-olivers h5 {
-    text-align: right;
-    position: absolute;
-    bottom: 63px;
-  }
-  
-  .resume #job-olivers span {
-    line-height: 50px;
-  }
-
-
-
-  .resume .years {
-    text-align: justify;
-  }
-  
-  .resume .years .middot {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    font-size: 58px;
-    color: var(--gray);
-    line-height: 20px;
-
-  }
-  
-  .resume .years .year-list {
-    
-    display: inline-flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: -18px;
-  }
-  
-  .resume .years * {
-    display: inline;
-    list-style-position: outside;
-    padding: 0;
-  }
-  
-  .resume .years span {
-
-    display: inline-block;
-    position: relative;
-    
-    width: 100%;
-    height: 0;
-  }
- 
-
-
-
-
-
 
 
 footer{
@@ -676,9 +426,7 @@ footer{
   flex-shrink: 0;
   flex-basis: 300px;
   
-  
   min-width: 400px;
-  
 }
 
 
@@ -709,18 +457,17 @@ footer{
 }
 
 
-.icons ul{
+
+.icons{
+  text-align: left;
   margin-top: 30px;
-  width: 100%;
 }
 
-.icons ul, li{
+.icons li{
   display: inline-block;
-  text-align: left;  
 }
 
 .icons li img{
-  
   width: 40px;
   height: 40px;
   display: block;
@@ -749,3 +496,23 @@ footer{
 .svg-color-white{
   filter: invert(100%);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

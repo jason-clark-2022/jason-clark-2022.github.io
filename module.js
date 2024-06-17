@@ -85,38 +85,59 @@ function setTimelineHeights(){
     document.getElementById('job-bing-shop').style.borderBottomWidth = (bingShopSpan/ratio) + "px";
     document.getElementById('job-bing-field').style.borderBottomWidth = (bingFieldSpan/ratio) + "px";
     document.getElementById('job-olivers').style.borderBottomWidth = (oliversSpan/ratio) + "px";
+    document.getElementById('job-atcs').style.borderBottomWidth = (atcsSpan/ratio) + "px";
   }
 }
 
 
 function setTimelineWidths(){
-  
+  var siueYears = 5;
+  var usbYears = 4/12; // Slightly exaggerated for visibility
+  var bingShopYears = 2;
+  var bingFieldYears = 3.4;
+  var oliversYears = 1;
+  var atcsYears = 1.3;
+  var timelineSegments = 8; // Total Number of whole years on timeline
+  var sizingCorrection = 1.0;
+
   var timelineWidth = document.getElementById('resume-timeline').offsetWidth;
-  
-  siueSpan = timelineWidth / 2.7;
+  var oneYearOnTimeline = (timelineWidth / timelineSegments) * sizingCorrection;
+
+  siueSpan = oneYearOnTimeline * (siueYears / 2); // div by 2 to split for left and right border
   siue = document.getElementById('job-siue');
   siue.style.borderLeft = siueSpan + "px solid transparent";
   siue.style.borderRight = siueSpan + "px solid transparent";
-
-  usbSpan = timelineWidth / 40;
+  siue.style.left = "10%";
+  
+  usbSpan = oneYearOnTimeline * (usbYears / 2); 
   usb = document.getElementById('job-usb');
   usb.style.borderLeft = usbSpan + "px solid transparent";
   usb.style.borderRight = usbSpan + "px solid transparent";
+  usb.style.left = "30%";
+  
+  bingShopSpan = oneYearOnTimeline * (bingShopYears / 2);
+  bingShop = document.getElementById('job-bing-shop');
+  bingShop.style.borderLeft = bingShopSpan + "px solid transparent";
+  bingShop.style.borderRight = bingShopSpan + "px solid transparent";
+  bingShop.style.left = "20%";
 
-  bingShopSpan = timelineWidth / 6.3;
-  bingshop = document.getElementById('job-bing-shop');
-  bingshop.style.borderLeft = bingShopSpan + "px solid transparent";
-  bingshop.style.borderRight = bingShopSpan + "px solid transparent";
-
-  bingFieldSpan = timelineWidth / 3.6;
+  bingFieldSpan = oneYearOnTimeline * (bingFieldYears / 2);
   bingField = document.getElementById('job-bing-field');
   bingField.style.borderLeft = bingFieldSpan + "px solid transparent";
   bingField.style.borderRight = bingFieldSpan + "px solid transparent";
+  bingField.style.left = "2%";
 
-  oliversSpan = timelineWidth / 13;
+  oliversSpan = oneYearOnTimeline * (oliversYears / 2);
   olivers = document.getElementById('job-olivers');
   olivers.style.borderLeft = oliversSpan + "px solid transparent";
   olivers.style.borderRight = oliversSpan + "px solid transparent";
+  olivers.style.left = "58%";
+
+  atcsSpan = oneYearOnTimeline * (atcsYears / 2);
+  atcs = document.getElementById('job-atcs');
+  atcs.style.borderLeft = atcsSpan + "px solid transparent";
+  atcs.style.borderRight = atcsSpan + "px solid transparent";
+  atcs.style.left = "80%";
 }
 
 

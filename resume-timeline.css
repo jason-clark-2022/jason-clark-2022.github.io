@@ -1,0 +1,190 @@
+.resume{
+    width: 85%;
+    /* width: 950px; */
+    margin: 0 auto;
+    color: white;
+    font-family: 'Fira Code', sans-serif;
+  }
+  
+  .resume hr {
+    display: flex;
+    border: 1px solid white;
+  }
+  
+  .resume .full-qual {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .resume .qual {
+    margin-bottom: 40px;
+  }
+  
+  .resume .qual hr {
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .resume .data {
+    height: 250px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .resume .data .data-item {
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+  }
+  
+  .resume .data .data-item h5 {
+    position: absolute;
+    bottom: 10px;
+    white-space: nowrap;
+    border-bottom: 2px solid white;
+  }
+  
+  .resume .data .data-item span {
+    position: absolute;
+    bottom: 13px;
+    border-left: 2px solid white;
+  }
+    
+  .resume .data-item h5:hover{
+    font-size: 20px;
+    /* text-shadow: color(white); */
+    border-bottom: none;
+    transition: .2s;
+    transition-property: font-size;
+    cursor: pointer;
+    
+    /* -webkit-transform: scale(1.2); */
+  }
+  
+  .resume #job-siue{
+    z-index: 1;
+    border-bottom: 0px solid var(--lightgreen);
+    opacity: 0.5;
+    transition: border-bottom 1.5s;
+  }
+  
+  .resume #job-siue h5 {
+    position: absolute;
+    bottom: 33px
+  }
+  
+  .resume #job-usb {
+    z-index: 7;
+    border-bottom: 0px solid var(--lightgray);
+    transition: border-bottom 1.5s;
+  }
+  
+  .resume #job-usb h5 {
+    position: absolute;
+    bottom: 33px;
+  }
+    
+  .resume #job-bing-shop {
+    z-index: 6;
+    opacity: .5;;
+    border-bottom: 0px solid var(--lightgreen);
+    transition: border-bottom 1.5s;
+  }
+  
+.resume #job-bing-shop h5 {
+    position: absolute;
+    left: -71px;
+    bottom: 63px;
+}
+  
+.resume #job-bing-shop span{
+    line-height: 51px;  
+}
+  
+.resume #job-bing-field {
+    z-index: 4;
+    opacity: .5;
+    border-bottom: 0px solid var(--green);
+    transition: border-bottom 1.5s;
+}
+  
+.resume #job-bing-field h5 {
+    position: absolute;
+    left: -78px;
+    bottom: 33px;
+}
+  
+.resume #job-olivers {
+    z-index: 6;
+    opacity: .8;
+    border-bottom: 0px solid var(--lightgray);
+    transition: border-bottom 1.5s;
+}
+    
+    .resume #job-olivers h5 {
+      text-align: right;
+      position: absolute;
+      bottom: 63px;
+    }
+    
+    .resume #job-olivers span {
+      line-height: 50px;
+    }
+  
+  
+    .resume #job-atcs {
+      z-index: 6;
+      opacity: .8;
+      border-bottom: 0px solid var(--green);
+      transition: border-bottom 1.5s;
+    }
+    
+    .resume #job-atcs h5 {
+      text-align: right;
+      position: absolute;
+      bottom: 63px;
+    }
+    
+    .resume #job-atcs span {
+      line-height: 50px;
+    }
+  
+  
+    .resume .years {
+      text-align: justify;
+    }
+    
+    .resume .years .middot {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      font-size: 58px;
+      color: var(--gray);
+      line-height: 20px;
+  
+    }
+    
+    .resume .years .year-list {
+      
+      display: inline-flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: -18px;
+    }
+    
+    .resume .years * {
+      display: inline;
+      list-style-position: outside;
+      padding: 0;
+    }
+    
+    .resume .years span {
+  
+      display: inline-block;
+      position: relative;
+      
+      width: 100%;
+      height: 0;
+    }
