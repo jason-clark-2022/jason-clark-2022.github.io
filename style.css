@@ -1,4 +1,4 @@
-@import "compass/css3";
+/* @import "compass/css3"; */
 @import url('https://fonts.googleapis.com/css?family=Palanquin');
 @import url('https://fonts.googleapis.com/css?family=Fira Code');
 @import url(//fonts.googleapis.com/css?family=Lato:300:400);
@@ -22,15 +22,12 @@
     padding: 0;
     font-family: 'Fira Code', sans-serif;
     box-sizing: border-box;    
-  
-    
-    /* border: 1px solid red; */
-    
+      /* border: 1px solid red; */
 }
 
 .title
 {
-    font-size: 300%;
+  font-size: 300%;
 }
 
 
@@ -266,6 +263,8 @@ p {
 .bio-shell{
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .bio-wrapper{
@@ -275,6 +274,9 @@ p {
   height: 750px; 
   max-width: 1800px;
   position: relative;
+  
+  
+
 }
 
 .bio-content{  
@@ -304,11 +306,17 @@ p {
   box-shadow: 0px 0px 100px 40px  rgba(0, 0, 0, .4);
 }
 
+.bio-greeting::after{
+  width: 105%;
+  background-color: white;
+}
+
 .bio-content h6{
   font-size: 22px;
 }
 
 .bio-sub-greeting{
+  /* border: 1px solid red; */
   text-align: center;
   background-color: var(--lightgreenalt);
   border-radius: 15px;
