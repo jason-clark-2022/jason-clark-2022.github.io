@@ -143,3 +143,57 @@ function setTimelineWidths(){
 
 
 
+
+// const slider = document.querySelector('.slider');
+
+// function activate(e) {
+//   const items = document.querySelectorAll('.item');
+//   e.target.matches('.next') && slider.append(items[0])
+//   e.target.matches('.prev') && slider.prepend(items[items.length-1]);
+// }
+
+// document.addEventListener('click',activate,false);
+
+
+
+const $carousel = $(".resume-carousel");
+const $slides = $(".resume-carousel-slide");
+const $prevButton = $(".resume-prev");
+const $nextButton = $(".resume-next");
+
+let currentIndex = 0;
+
+function showSlide(index) {
+    if (index < 0) {
+        currentIndex = $slides.length - 1;
+    } else if (index >= $slides.length) {
+        currentIndex = 0;
+    }
+
+    $carousel.css("transform", `translateX(-${currentIndex * 100}%)`);
+    // $slides.css("opacity", 0);
+    // $slides[currentIndex].css("opacity","1");
+    // console.log($slides[currentIndex]);
+}
+
+
+
+if ($nextButton.length && $prevButton.length) {
+    $nextButton.click(function() {
+        currentIndex++;
+        showSlide(currentIndex);
+    });
+
+    $prevButton.click(function() {
+        currentIndex--;
+        showSlide(currentIndex);
+    });
+}
+
+ const autoAdvanceInterval = 6000; // Change slide every 12 seconds
+
+    setInterval(function() {
+        currentIndex++;
+        showSlide(currentIndex);
+    }, autoAdvanceInterval);
+
